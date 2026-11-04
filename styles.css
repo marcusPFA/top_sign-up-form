@@ -1,18 +1,89 @@
+@font-face {
+  font-family: "logo";
+  src: url("fonts/MilesdaneTrial-Regular.woff2") format("woff2"),
+       url("fonts/MilesdaneTrial-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
 }
 
-p {
-    font-family: "Roboto", sans-serif;
-    font-size: 26px;
+/* WHOLE PAGE */
+
+.page-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+ /* LEFT-HAND */
+
+ .left-hand {
+    position: relative;
+    height: 100%;
+    width: 500px;
+    background-color: chocolate;
+ }
+
+ .logo-text {
+    display: flex;
+    position: relative;
+    top: 25%;
+    padding: 15px 0;
+    font-family: "logo";
+    font-size: 48px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.626);
+ }
+
+ img {
+    height: 2em;
+    width: 2em;
+    color: white;
+ }
+
+ /* RIGHT-HAND */
+
+.right-hand {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.right-hand .section:nth-child(2n + 1) {
+    background-color: bisque;
+}
+
+.section {
+    position: relative;
+    height: 33%;
+    width: 100%;
+    flex-grow: 1;
+    min-height: fit-content;
+    overflow: hidden;
+    padding: 20px 20px;
+}
+
+/* First Section */
+
+.description p {
+    position: relative;
+    top: 50%;
+    align-self: center;
+    font-size: 16px;
     font-weight: 700;
+    width: 100ch;
+
 }
 
-label {
-    font-family: "Roboto", sans-serif;
-}
+/* Second Section */
 
 .form-row {
     display: flex;
@@ -23,42 +94,28 @@ label {
 .form-item {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    margin-bottom: 12px;
 }
 
-.page-wrapper {
-    display: flex;
-    height: 100vh;
-    min-height: 1000px;
-    border: 1px solid red;
+label {
+    font-size: 10px;
+    font-weight: 600;
 }
 
-.left-hand, .right-hand {
-    height: 100%;
+input {
+    font-size: 14px;
+    border: 1px solid #E5E7EB;
+    border-radius: 2px;
 }
 
-.left-hand {
-    width: 700px;
-    background-image: url(images/background.jpg);
-    background-size: cover;
+input:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: 2px 2px;
 }
 
-.right-hand {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
-}
-
-.section {
-    flex-grow: 1;
-    padding: 40px;
-}
-
-.description, .submit {
-    background-color: gainsboro;
-}
-
-.row {
-    display: flex;
+.form > p {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
