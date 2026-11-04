@@ -12,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    color: rgb(20, 20, 20);
 }
 
 /* WHOLE PAGE */
@@ -26,11 +27,15 @@
  .left-hand {
     position: relative;
     height: 100%;
-    width: 500px;
+    width: 800px;
     background-color: chocolate;
+    background-image: url(images/background.jpg);
+    background-position: center;
+    background-size: cover;
  }
 
  .logo-text {
+    flex-grow: 0;
     display: flex;
     position: relative;
     top: 25%;
@@ -44,8 +49,9 @@
  }
 
  img {
-    height: 2em;
-    width: 2em;
+    margin-right: 10px;
+    height: 1.5em;
+    width: 1.5em;
     color: white;
  }
 
@@ -54,21 +60,21 @@
 .right-hand {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    flex-grow: 1;
 }
 
 .right-hand .section:nth-child(2n + 1) {
     background-color: bisque;
+    flex-grow: 1;
 }
 
 .section {
     position: relative;
     height: 33%;
     width: 100%;
-    flex-grow: 1;
     min-height: fit-content;
     overflow: hidden;
-    padding: 20px 20px;
+    padding: 20px 40px;
 }
 
 /* First Section */
@@ -77,45 +83,102 @@
     position: relative;
     top: 50%;
     align-self: center;
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 700;
-    width: 100ch;
+    width: 90%;
 
 }
 
 /* Second Section */
 
+.form {
+    z-index: 1;
+    height: fit-content;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 
+    4px 4px 6px rgba(38, 38, 38, 0.3),
+    -1px -1px 10px rgba(160, 160, 160, 0.3);
+
+}
+
 .form-row {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 3em;
 }
 
 .form-item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
+    margin-bottom: 21px;
 }
 
 label {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
 }
 
 input {
-    font-size: 14px;
+    height: 34px;
+    width: 280px;
+    font-size: 16px;
     border: 1px solid #E5E7EB;
-    border-radius: 2px;
+    border-radius: 4px;
+}
+
+label:not(label[for="phone"])::after {
+    content: "*";
 }
 
 input:focus {
     outline: none;
     border: 1px solid blue;
-    box-shadow: 2px 2px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.328);
+}
+
+input:user-invalid {
+    border: 1px solid red;
+    
 }
 
 .form > p {
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 15px;
+}
+
+button {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    padding: 25px 50px;
+    border: none;
+    border-radius: 7px;
+    background-color: chocolate;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.328);
+    margin-bottom: 35px;
+}
+
+button:hover {
+    background-color: rgb(228, 114, 33);
+    cursor: pointer;
+    
+
+}
+
+button:active {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.328) inset;
+}
+
+a {
+    font-weight: 700;
+    color: chocolate;
+    text-decoration: none;
+}
+
+.submit p {
+    font-size: 18px;
 }
